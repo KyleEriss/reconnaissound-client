@@ -1,20 +1,19 @@
 import React from 'react';
 import ApiContext from "./ApiContext";
-import config from "./config";
+import LinkButton from './LinkButton';
+import { newUser } from './ApiService';
+import { Link } from 'react-router-dom';
 
 const initialState = {
-    fullname: "",
     username: "",
     password: "",
     confirmPassword: "",
-    fullnameError: "",
     usernameError: "",
     passwordError: "",
     confirmPasswordError: ""
 };
 
-export default class Login extends React.Component {
-
+export default class CreateAccountForm extends React.Component {
     static contextType = ApiContext;
 
     state = initialState;
@@ -26,17 +25,12 @@ export default class Login extends React.Component {
     };
 
     validate = () => {
-        let fullnameError = "";
         let usernameError = "";
         let passwordError = "";
         let confirmPasswordError = "";
 
         let password = this.state.password;
         let confirmPassword = this.state.confirmPassword;
-
-        if (!this.state.fullname) {
-            fullnameError = "name cannot be blank";
-        }
 
         if (!this.state.username) {
             usernameError = "username cannot be blank";
@@ -50,17 +44,13 @@ export default class Login extends React.Component {
             confirmPasswordError = "confirm password required";
         }
 
-        if (!this.state.confirmPassword) {
-            confirmPasswordError = "confirm password required";
-        }
-
         if (this.state.password && this.state.confirmPassword && password !== confirmPassword) {
             passwordError = "passwords must match";
             confirmPasswordError = "passwords must match";
         }
 
-        if (fullnameError || usernameError || passwordError || confirmPasswordError) {
-            return this.setState({ fullnameError, usernameError, passwordError, confirmPasswordError });
+        if (usernameError || passwordError || confirmPasswordError) {
+            return this.setState({ usernameError, passwordError, confirmPasswordError });
         }
 
         return true;
@@ -69,11 +59,10 @@ export default class Login extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        const fullname = this.state.fullname;
         const username = this.state.username;
         const password = this.state.password;
-
         const isValid = this.validate();
+        const addUser = this.context.addUser;
 
         if (!isValid) {
             return false;
@@ -81,29 +70,11 @@ export default class Login extends React.Component {
 
         if (isValid) {
             console.log(this.state);
-            // clear form
+
             this.setState(initialState);
         }
 
-        fetch(`${config.API_ENDPOINT}/users`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({
-                fullname: fullname,
-                username: username,
-                password: password
-            })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                this.context.addUser(data)
-                //this.props.history.push('/')
-            })
-            .catch(error => console.log(error))
-
+        newUser(username, password, addUser);
     };
 
 
@@ -113,17 +84,6 @@ export default class Login extends React.Component {
         return (
             <div>
                 <form className="inputField" onSubmit={this.handleSubmit}>
-
-                    <input
-                        name="fullname"
-                        placeholder="full name"
-                        value={this.state.fullname}
-                        onChange={this.handleChange}
-                    />
-
-                    <div style={{ fontSize: 12, color: "red" }}>
-                        {this.state.fullnameError}
-                    </div>
 
                     <input
                         name="username"
@@ -160,7 +120,14 @@ export default class Login extends React.Component {
                         {this.state.confirmPasswordError}
                     </div>
 
-                    <button onClick={this.handleSubmit}>submit</button>
+                    <LinkButton
+                        to='/explore'
+                        onClick={this.handleSubmit}
+                    >
+                        submit
+                    </LinkButton>
+
+                    {/* <button onClick={this.handleSubmit}>submit</button> */}
                 </form>
             </div>
         );
