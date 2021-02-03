@@ -15,12 +15,12 @@ export default class CreateAccountPage extends Component {
 
   render() {
     return (
-      <Section className='RegistrationPage'>
-        <h2>Register</h2>
+      <div>
+        <h2>Create Account</h2>
         <CreateAccountForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
-      </Section>
+      </div>
     )
   }
 }

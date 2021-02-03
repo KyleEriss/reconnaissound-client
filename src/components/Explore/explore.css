@@ -1,0 +1,45 @@
+.explorePage {
+  width: 75%;
+}
+
+/* .exploreForm {
+  margin-left: 300px;
+  margin-right: 300px;
+} */
+
+/* .videoResults {
+  justify-content: inherit;
+} */
+
+
+/* .inputField {
+  width: 50%;
+}
+
+.videoTitle {
+  font-size: medium;
+}
+
+@media all and (min-width: 490px) {
+  iframe {
+    width: 327px;
+    height: 184px;
+  }
+
+  .inputField {
+    width: 80%;
+  }
+}
+
+@media all and (min-width: 1000px) {
+  iframe {
+    width: 560px;
+    height: 315px;
+  }
+
+  .exploreForm {
+    margin-left: 300px;
+    margin-right: 300px;
+  }
+
+} */
