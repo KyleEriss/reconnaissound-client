@@ -18,13 +18,9 @@ export default class Header extends React.Component {
     }
 
     componentDidMount() {
-
         this.setState({
             loggedIn: TokenService.hasAuthToken()
         })
-
-        console.log(TokenService.hasAuthToken)
-        console.log(this.state.loggedIn)
     }
 
     render() {
@@ -46,7 +42,7 @@ export default class Header extends React.Component {
                     <li className="itemSingle">
                         {TokenService.hasAuthToken()
                             ? <NavLinks.LogoutLink logout={this.handleLogoutClick} />
-                            : <div></div>}
+                            : <NavLinks.LoginLink />}
                     </li>
                 </ul>
             </div>

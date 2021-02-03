@@ -36,11 +36,19 @@ export default class App extends Component {
               exact path="/create-account" component={CreateAccountPage}
             />
 
-            <PrivateRoute
+            {/* <PrivateRoute
               path="/explore" component={Explore}
             />
 
             <PrivateRoute
+              path="/playlist" component={Playlist}
+            /> */}
+
+            <PublicRoute
+              path="/explore" component={Explore}
+            />
+
+            <PublicRoute
               path="/playlist" component={Playlist}
             />
 

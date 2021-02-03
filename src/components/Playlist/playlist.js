@@ -38,26 +38,6 @@ export default class Playlist extends React.Component {
         AuthApiService.deleteVideo(videoId);
 
         window.location.reload(false);
-
-
-
-        // console.log(idNumber)
-
-        // let videoIdMapped = this.state.videos.map(video => {
-        //     return video.id
-        // })
-
-        // let videoTitleMapped = this.state.videos.map(video => {
-        //     return video.snippet.title
-        // })
-
-        // console.log(videoIdMapped[idNumber]);
-        // console.log(videoTitleMapped[idNumber]);
-
-        // const videoId = videoIdMapped[idNumber];
-        // const videoTitle = videoTitleMapped[idNumber];
-
-
     }
 
 

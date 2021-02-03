@@ -45,6 +45,14 @@ const NavLinks = {
                 <Link onClick={props.logout} to='/' style={{ textDecoration: 'none', color: 'orangered' }}>Logout</Link>
             </div>
         )
+    },
+
+    LoginLink() {
+        return (
+            <div>
+                <Link to='/Login' style={{ textDecoration: 'none', color: 'orangered' }}>Login</Link>
+            </div>
+        )
     }
 }
 
