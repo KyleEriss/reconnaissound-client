@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
 import AuthApiService from '../../Api-Service';
+import Autocomplete from './Autocomplete';
+import CountryNames from './CountryNames';
+import CountryCodes from './CountryCodes';
 import './explore.css';
 
 export default class Explore extends React.Component {
@@ -10,7 +13,8 @@ export default class Explore extends React.Component {
         maxResults: "",
         videos: [],
         loading: true,
-        error: null
+        error: null,
+        countryCodes: CountryCodes 
     };
 
     handleChange = event => {
@@ -19,11 +23,26 @@ export default class Explore extends React.Component {
         })
     };
 
+    addSelectCountry = (country) => {
+        this.setState({
+            selectCountry: country
+        })
+    }
+
+    // mapCountryCodes = (selectCountry) => {
+    //     return
+    // }
+
     handleSubmit = event => {
         event.preventDefault();
 
+        console.log(this.state.selectCountry)
+
         const selectCountry = this.state.selectCountry;
         const maxResults = this.state.maxResults;
+
+        // mapCountryCodes(selectCountry)
+
         let youTubeUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&chart=mostPopular&maxResults=${maxResults}&regionCode=${selectCountry}&videoCategoryId=10&key=AIzaSyBRPRd_vBZcveCCLZRWVdlCmyRjlmj3G0k`;
 
         fetch(youTubeUrl)
@@ -63,7 +82,7 @@ export default class Explore extends React.Component {
 
     render() {
 
-        const { error } = this.state
+        const { error } = this.state;
 
         return (
 
@@ -71,30 +90,18 @@ export default class Explore extends React.Component {
 
                 <div className="exploreForm">
                     <h2>Explore</h2>
-                    <form className="ExploreForm_selectCountry"
+                    <form className="ExploreForm__selectCountry"
                         onSubmit={this.handleSubmit}
                     >
-
                         <div className="selectCountryForm">
-                            <label htmlFor="ExploreForm_selectCountry">
+                            <label htmlFor="ExploreForm__selectCountry">
                                 Select Country <Required />
                             </label>
-
-                            <Input
-                                name="selectCountry"
-                                value={this.state.selectCountry}
-                                required
-                                onChange={this.handleChange}
-                                id="ExploreForm_selectCountry"
-                            />
-
-                            <div style={{ fontSize: 12, color: "red" }}>
-                                {this.state.selectCountryError}
-                            </div>
+                            <Autocomplete countries={CountryNames} addSelectCountry={this.addSelectCountry}/>
                         </div>
 
                         <div className="maxResults">
-                            <label htmlFor="EExploreForm_maxResults">
+                            <label htmlFor="ExploreForm__maxResults">
                                 Number of Results <Required />
                             </label>
 
@@ -103,12 +110,13 @@ export default class Explore extends React.Component {
                                 value={this.state.maxResults}
                                 required
                                 onChange={this.handleChange}
-                                id="ExploreForm_maxResults"
+                                id="ExploreForm__maxResults"
                             />
                         </div>
 
                         <Button type="submit">submit</Button>
                     </form>
+
                 </div>
 
 
@@ -147,46 +155,28 @@ export default class Explore extends React.Component {
 
 
 
-            // <div>
-            //     <h2>Explore</h2>
+
+
+{/* <div className="selectCountryForm">
+                            <label htmlFor="ExploreForm__selectCountry">
+                                Select Country <Required />
+                            </label>
+
+                            <Input
+                                name="selectCountry"
+                                value={this.state.selectCountry}
+                                required
+                                onChange={this.handleChange}
+                                id="ExploreForm__selectCountry"
+                            />
+                        </div> */}
 
 
 
-            //     <form className="ExploreForm"
-            //         onSubmit={this.handleSubmit}
-            //     >
-
-            //         <div role='alert'>
-            //             {error && <p className='red'>{error}</p>}
-            //         </div>
 
 
 
 
-            //         <div className="selectCountry">
-            //             <label htmlFor="ExploreForm__selectCountry">
-            //                 Select Country <Required />
-            //             </label>
-
-            //             <Input
-            //                 name="selectCountry"
-            //                 type='text'
-            //                 required
-            //                 id="ExploreForm__selectCountry">
-            //             </Input>
-            //         </div>
 
 
-            //         <div className="maxResults">
-            //             <label htmlFor="ExploreForm_maxResults">
-            //                 Number of Results <Required />
-            //             </label>
 
-            //             <Input
-            //                 name="maxResults"
-            //                 value={this.state.maxResults}
-            //                 required
-            //                 onChange={this.handleChange}
-            //                 id="ExploreForm_maxResults">
-            //             </Input>
-            //         </div>

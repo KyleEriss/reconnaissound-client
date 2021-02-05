@@ -48,7 +48,6 @@ export default class LoginForm extends React.Component {
                         User name
               </label>
                     <Input
-                        required
                         name='username'
                         required
                         id='LoginForm__username'>
@@ -59,7 +58,6 @@ export default class LoginForm extends React.Component {
                         Password
               </label>
                     <Input
-                        required
                         name='password'
                         type='password'
                         required
