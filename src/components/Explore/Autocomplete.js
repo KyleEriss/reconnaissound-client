@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Required } from '../Utils/Utils';
+import { Input } from '../Utils/Utils';
 import './Autocomplete.css';
 
 export default class Autocomplete extends React.Component {
@@ -13,13 +13,13 @@ export default class Autocomplete extends React.Component {
     }
 
     onTextChanged = (e) => {
-        const { countries } = this.props;
+        const { countryNames } = this.props;
         const value = e.target.value;
         let list = [];
 
         if (value.length > 0) {
             const regex = new RegExp(`^${value}`, 'i');
-            list = countries.sort().filter(v => regex.test(v));
+            list = countryNames.sort().filter(v => regex.test(v));
         }
         this.setState(() => ({ suggestions: list, text: value }));
     }
@@ -32,17 +32,20 @@ export default class Autocomplete extends React.Component {
         return (
             <ul>
                 {suggestions.map((item) => <li onClick={() => this.suggestionSelected(item)}>{item}</li>)}
-                {/* {suggestions.map((country) => <li onClick={() => this.props.addSelectCountry(country)}>{country}</li>)} */}
             </ul>
             
         );
     }
 
     suggestionSelected(value) {
+        const { countryList } = this.props;
 
-        this.props.addSelectCountry({
-            country: this.state.suggestions
-        })
+        console.log(countryList)
+
+        
+        const country = countryList.find(item => item.label === value)
+
+        this.props.addSelectCountry(country.code)
 
         this.setState(() => ({
             text: value,
@@ -56,12 +59,13 @@ export default class Autocomplete extends React.Component {
 
         return (
             <div className="Autocomplete">
-                <input
+                <Input
                     name="selectCounty"
                     value={text}
                     onChange={this.onTextChanged}
                     type="text"
                     required
+                    autoComplete="off"
                     id="ExploreForm__selectCountry"
                 />
                 {this.renderSuggestions()}

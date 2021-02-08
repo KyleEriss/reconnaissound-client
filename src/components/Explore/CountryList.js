@@ -1,5 +1,5 @@
 
-const CountryCodes = [
+export const CountryList = [
   { code: 'AD', label: 'Andorra', phone: '376' },
   { code: 'AE', label: 'United Arab Emirates', phone: '971' },
   { code: 'AF', label: 'Afghanistan', phone: '93' },
@@ -250,4 +250,4 @@ const CountryCodes = [
   { code: 'ZW', label: 'Zimbabwe', phone: '263' },
 ];
 
-export default CountryCodes;
+export const CountryNames = CountryList.map(item => item.label);

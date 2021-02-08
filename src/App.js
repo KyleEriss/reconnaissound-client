@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 import Header from './components/Header/header';
 import CreateAccountPage from './components/Create-Account/CreateAccountPage';
 import LoginPage from './components/Login/LoginPage';
 import Explore from './components/Explore/explore';
 import LandingPage from './components/LandingPage/LandingPage';
 import Playlist from './components/Playlist/playlist';
-import PrivateRoute from './components/Utils/PrivateRoute';
+// import PrivateRoute from './components/Utils/PrivateRoute';
 import PublicRoute from './components/Utils/PublicRoute';
-import TokenService from './token-service';
 import './App.css';
 
 export default class App extends Component {

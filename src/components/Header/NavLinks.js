@@ -1,19 +1,6 @@
-import { parseWithOptions } from 'date-fns/fp';
 import { Link } from 'react-router-dom';
-import TokenService from '../../token-service';
-
-
-// function handleLogoutClick() {
-//     TokenService.clearAuthToken()
-// }
 
 const NavLinks = {
-
-    // handleLogoutClick() {
-    //     return (
-    //         TokenService.clearAuthToken()
-    //     )
-    // },
 
     ReconHeaderLink() {
         return (

@@ -2,8 +2,8 @@ import React from 'react';
 import { Button, Input, Required } from '../Utils/Utils';
 import AuthApiService from '../../Api-Service';
 import Autocomplete from './Autocomplete';
-import CountryNames from './CountryNames';
-import CountryCodes from './CountryCodes';
+import { CountryNames, CountryList } from './CountryList';
+import config from '../../config';
 import './explore.css';
 
 export default class Explore extends React.Component {
@@ -13,8 +13,7 @@ export default class Explore extends React.Component {
         maxResults: "",
         videos: [],
         loading: true,
-        error: null,
-        countryCodes: CountryCodes 
+        error: null
     };
 
     handleChange = event => {
@@ -29,21 +28,14 @@ export default class Explore extends React.Component {
         })
     }
 
-    // mapCountryCodes = (selectCountry) => {
-    //     return
-    // }
-
     handleSubmit = event => {
         event.preventDefault();
 
-        console.log(this.state.selectCountry)
-
         const selectCountry = this.state.selectCountry;
         const maxResults = this.state.maxResults;
+        const apiKey = config.API_KEY;
 
-        // mapCountryCodes(selectCountry)
-
-        let youTubeUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&chart=mostPopular&maxResults=${maxResults}&regionCode=${selectCountry}&videoCategoryId=10&key=AIzaSyBRPRd_vBZcveCCLZRWVdlCmyRjlmj3G0k`;
+        let youTubeUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&part=statistics&chart=mostPopular&maxResults=${maxResults}&regionCode=${selectCountry}&videoCategoryId=10&key=${apiKey}`;
 
         fetch(youTubeUrl)
             .then(res => res.json())
@@ -82,8 +74,6 @@ export default class Explore extends React.Component {
 
     render() {
 
-        const { error } = this.state;
-
         return (
 
             <div className="explorePage">
@@ -97,7 +87,7 @@ export default class Explore extends React.Component {
                             <label htmlFor="ExploreForm__selectCountry">
                                 Select Country <Required />
                             </label>
-                            <Autocomplete countries={CountryNames} addSelectCountry={this.addSelectCountry}/>
+                            <Autocomplete countryNames={CountryNames} countryList={CountryList} addSelectCountry={this.addSelectCountry} />
                         </div>
 
                         <div className="maxResults">
@@ -129,13 +119,15 @@ export default class Explore extends React.Component {
                             <ul>
                                 {this.state.videos.map((video, idx) => (
                                     <li className="videoList" key={idx}>
-                                        <iframe
-                                            width="210"
-                                            height="118"
-                                            src={`https://www.youtube.com/embed/${video.id}`}
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen>
-                                        </iframe>
+                                        <div iframeClass>
+                                            <iframe
+                                                width="210"
+                                                height="118"
+                                                src={`https://www.youtube.com/embed/${video.id}`}
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowFullScreen>
+                                            </iframe>
+                                        </div>
                                         <h3 className="videoTitle">
                                             <a href={`https://www.youtube.com/watch?v=${video.id}`}>
                                                 {video.snippet.title}
@@ -152,25 +144,6 @@ export default class Explore extends React.Component {
         );
     }
 }
-
-
-
-
-
-{/* <div className="selectCountryForm">
-                            <label htmlFor="ExploreForm__selectCountry">
-                                Select Country <Required />
-                            </label>
-
-                            <Input
-                                name="selectCountry"
-                                value={this.state.selectCountry}
-                                required
-                                onChange={this.handleChange}
-                                id="ExploreForm__selectCountry"
-                            />
-                        </div> */}
-
 
 
 

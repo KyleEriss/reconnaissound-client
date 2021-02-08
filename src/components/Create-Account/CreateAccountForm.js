@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Input, Required } from '../Utils/Utils'
 import AuthApiService from '../../Api-Service';
-import { Link } from 'react-router-dom';
 
 export default class CreateAccountForm extends React.Component {
     static defaultProps = {
