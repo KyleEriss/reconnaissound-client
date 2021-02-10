@@ -6,7 +6,7 @@ import LoginPage from './components/Login/LoginPage';
 import Explore from './components/Explore/explore';
 import LandingPage from './components/LandingPage/LandingPage';
 import Playlist from './components/Playlist/playlist';
-// import PrivateRoute from './components/Utils/PrivateRoute';
+import PrivateRoute from './components/Utils/PrivateRoute';
 import PublicRoute from './components/Utils/PublicRoute';
 import './App.css';
 
@@ -35,19 +35,11 @@ export default class App extends Component {
               exact path="/create-account" component={CreateAccountPage}
             />
 
-            {/* <PrivateRoute
+            <PrivateRoute
               path="/explore" component={Explore}
             />
 
             <PrivateRoute
-              path="/playlist" component={Playlist}
-            /> */}
-
-            <PublicRoute
-              path="/explore" component={Explore}
-            />
-
-            <PublicRoute
               path="/playlist" component={Playlist}
             />
 
