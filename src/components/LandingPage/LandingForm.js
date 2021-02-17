@@ -11,15 +11,16 @@ export default class LandingForm extends React.Component {
 
     render() {
         return (
-            <div className="landingFormClass">
-                <Link to='/create-account'>
-                    <Button>Create Account</Button>
-                </Link>
-                
-                <div>
-                    Already have an account? Log in <Link to='/login'>here</Link>
+                <div className="landingFormClass">
+                    <Link to='/create-account'>
+                        <Button>Create Account</Button>
+                    </Link>
+
+                    <div>
+                        Already have an account? Log in <Link to='/login'>here</Link>
+                    </div>
                 </div>
-            </div>
+
         )
     }
 }
