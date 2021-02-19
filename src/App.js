@@ -16,7 +16,7 @@ export default class App extends Component {
     return (
       <div className="App">
 
-        <div>
+        <div className="header">
           <Header />
         </div>
 

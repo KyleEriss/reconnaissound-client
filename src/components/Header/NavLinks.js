@@ -5,7 +5,7 @@ const NavLinks = {
     ReconHeaderLink() {
         return (
             <div>
-                <Link to='/' style={{ textDecoration: 'none', color: 'orangered' }}>Reconnaissound</Link>
+                <Link to='/' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Reconnaissound</Link>
             </div>
         )
     },
@@ -13,7 +13,7 @@ const NavLinks = {
     ExploreLink() {
         return (
             <div>
-                <Link to='/explore' style={{ textDecoration: 'none', color: 'orangered' }}>Explore</Link>
+                <Link to='/explore' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Explore</Link>
             </div>
         )
     },
@@ -21,7 +21,7 @@ const NavLinks = {
     PlaylistLink() {
         return (
             <div>
-                <Link to='/playlist' style={{ textDecoration: 'none', color: 'orangered' }}>Playlist</Link>
+                <Link to='/playlist' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Playlist</Link>
             </div>
         )
     },
@@ -29,7 +29,7 @@ const NavLinks = {
     LogoutLink(props) {
         return (
             <div>
-                <Link onClick={props.logout} to='/' style={{ textDecoration: 'none', color: 'orangered' }}>Logout</Link>
+                <Link onClick={props.logout} to='/' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Logout</Link>
             </div>
         )
     },
@@ -37,7 +37,7 @@ const NavLinks = {
     LoginLink() {
         return (
             <div>
-                <Link to='/Login' style={{ textDecoration: 'none', color: 'orangered' }}>Login</Link>
+                <Link to='/Login' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Login</Link>
             </div>
         )
     }

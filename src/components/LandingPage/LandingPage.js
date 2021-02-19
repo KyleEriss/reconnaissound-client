@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LandingForm from './LandingForm';
-import './LandingPage.css';
 
 export default class LandingPage extends Component {
 
@@ -9,7 +8,6 @@ export default class LandingPage extends Component {
     return (
 
       <div>
-        <div classname="introduction">
           Welcome to Reconnaissound!
           <br />
           <br />
@@ -23,10 +21,9 @@ export default class LandingPage extends Component {
           <br />
           <br />
           Enjoy!
-        </div>
-        <div>
+          <br />
+          <br />
           <LandingForm />
-        </div>
       </div>
 
     )

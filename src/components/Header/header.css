@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
 .App-header {
     display: flex;
     flex-direction: column;
     min-height: 10vh;
-    background-color: #282c34;
     font-size: calc(10px + 2vmin);
+    background: black;
 }
 
 .item {
@@ -12,6 +14,9 @@
     font-size: 30px;
     font-weight: 900;
     margin-top: 20px;
+    font-family: 'Caveat', cursive;
+    font-weight: 900;
+    font-size: 55px;
 }
 
 .itemDouble {
@@ -20,7 +25,7 @@
     justify-content: space-between;
     list-style: none;
     margin-right: 20px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
     margin-top: 35px;
 }
 
