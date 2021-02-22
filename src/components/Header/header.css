@@ -1,22 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap');
 
 .App-header {
     display: flex;
     flex-direction: column;
-    min-height: 10vh;
+    min-height: 100vh;
     font-size: calc(10px + 2vmin);
     background: black;
+    animation: headerAnimation 5s forwards;
+    animation-delay: 4s;
 }
 
-.item {
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    font-weight: 900;
-    margin-top: 20px;
+@keyframes headerAnimation {
+    from {min-height: 100vh;}
+    to {min-height: 5vh;}
+}
+
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0 20px;
+    font-size: 3.2em;
+    color: #fff;
+    text-shadow: 0 0 20px rgb(255, 0, 149);
     font-family: 'Caveat', cursive;
-    font-weight: 900;
-    font-size: 55px;
+    animation: titleAnimation 4s forwards;
+    animation-delay: 3s;
+}
+
+@keyframes titleAnimation {
+    from {transform: translate(-50%, -50%);}
+    to {transform: translate(-50%, -450%);}
+}
+
+.title:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    z-index: -1;
+    color: rgb(255, 0, 149);
+    filter: blur(15px);
+    opacity: 1;
+}
+
+.title:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 0, 149);
+    z-index: -2;
+    opacity: .2;
+    filter: blur(40px);
 }
 
 .itemDouble {
@@ -26,71 +67,52 @@
     list-style: none;
     margin-right: 20px;
     margin-bottom: 10px;
-    margin-top: 35px;
+    margin-top: 130px;
+    font-weight: 900;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.3em;
 }
 
-.itemSingle {
+.itemExplore {
     margin-right: 20px;
+    opacity: 0;
+    animation: itemExploreAnimation 4s forwards;
+    animation-delay: 10s;
 }
 
-
-/* 
-@media all and (min-width: 600px) {
-    .item {
-        padding-right: 175px;
-    }
-    
-    .itemDouble {
-        padding-left: 175px;
-    }
+@keyframes itemExploreAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
-@media all and (min-width: 800px) {
-    .item {
-        padding-right: 250px;
-    }
-    
-    .itemDouble {
-        padding-left: 250px;
-    }
+.itemPlaylist {
+    margin-right: 20px;
+    opacity: 0;
+    animation: itemPlaylistAnimation 4s forwards;
+    animation-delay: 14s;
 }
 
-@media all and (min-width: 1000px) {
-    .item {
-        padding-right: 300px;
-    }
-    
-    .itemDouble {
-        padding-left: 300px;
-    }
+@keyframes itemPlaylistAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
-@media all and (min-width: 1200px) {
-    .item {
-        padding-right: 400px;
-    }
-    
-    .itemDouble {
-        padding-left: 400px;
-    }
+.itemLogin {
+    margin-right: 20px;
+    opacity: 0;
+    animation: itemLoginAnimation 4s forwards;
+    animation-delay: 18s;
 }
 
-@media all and (min-width: 1400px) {
-    .item {
-        padding-right: 500px;
-    }
-    
-    .itemDouble {
-        padding-left: 500px;
-    }
+@keyframes itemLoginAnimation {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 
-@media all and (min-width: 1600px) {
-    .item {
-        padding-right: 600px;
+@media all and (min-width: 700px) {
+
+    @keyframes titleAnimation {
+        from {transform: translate(-50%, -50%);}
+        to {transform: translate(-50%, -400%);}
     }
-    
-    .itemDouble {
-        padding-left: 600px;
-    }
-} */
+}

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Quicksand:wght@300&display=swap');
 
 .Hyph {
     margin-right: 5px;
@@ -26,29 +27,21 @@
     resize: vertical;
   }
   
-  /* .Button {
-    order: 1px solid #aaa;
-    background-color: #eee;
-    font-size: 1.1em;
-    border-radius: 4px;
-    padding: 8px 12px;
-    font-weight: bold;
-  } */
-  
   .Button {
     background-color: black;
     border: none;
-    color: #aaa;
+    color: white;
+    text-shadow: 0 0 20px rgb(255, 0, 149);
     padding: 16px 32px;
     text-decoration: none;
     font-size: 1.1em;
-    font-weight: bold;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 10px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     font-weight: 900;
     letter-spacing: 1px;
+    font-family: 'Quicksand', sans-serif;
   }
 
   .Required {

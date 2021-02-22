@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+For your capstone, we'd like you to add a README.md file to your repo. At a minimum, this file should contain:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The name of your app at the top of the file.
+A link to your live app.
+Documentation of your API.
+Screenshot(s) of your app. This makes your app description much easier to understand.
+A summary section. This should have a concise explanation of what your app does. Try to frame this from the standpoint of what the user does, or what the app enables for the user.
+A section on the technology used.
 
-## Available Scripts
 
-In the project directory, you can run:
+Reconnaissound
 
-### `npm start`
+The Reconnaissound web app lets users generate a list of trending YouTube music videos from any country in the world. Users can watch the videos directly on the web app, without needing to follow links to Youtube. Users can also save any of the content to their personalized playlist.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To set up a playlist, a user must create an account first. Their credentials are encrypted and JSON Web Tokens (JWTs) are used to grant authorization.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Here's a link to the live app: https://reconnaissound-client.vercel.app/
 
-### `npm test`
+You can access repo to the client app here: https://github.com/KyleEriss/reconnaissound-client
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+You can access repo to the server app here: https://github.com/KyleEriss/reconnaissound-server
 
-### `npm run build`
+Landing page:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![LandingPage](images/LandingPage.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Explore music page:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![LandingPage](images/Explore.jpg)
 
-### `npm run eject`
+Playlist page:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![LandingPage](images/Playlist.jpg)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tech used includes React, Node, Express, PostgreSQL, JWTs for authorization, and CSS animations

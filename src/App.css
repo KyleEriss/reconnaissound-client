@@ -12,34 +12,9 @@
   margin-top: 100px;
 }
 
-
-/* .exploreComponent {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0;
-  transform: translate(0%, 0%);
-} */
-
 .videoList {
   list-style: none;
 }
-
-/* .button {
-  background-color: black;
-  border: none;
-  color: #aaa;
-  padding: 16px 32px;
-  text-decoration: none;
-  font-size: 1.1em;
-  font-weight: bold;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  font-weight: 900;
-  letter-spacing: 1px;
-} */
 
 .buttonClass {
   background-color: black;

@@ -5,7 +5,7 @@ const NavLinks = {
     ReconHeaderLink() {
         return (
             <div>
-                <Link to='/' style={{ textDecoration: 'none', color: 'rgb(255, 0, 149)' }}>Reconnaissound</Link>
+                <Link to='/' style={{ textDecoration: 'none', color: 'white'}}>Reconnaissound</Link>
             </div>
         )
     },

@@ -14,6 +14,18 @@ ul {
   margin-right: 35px;
 }
 
+.videoList {
+  margin-top: 55px;
+}
+
+.unsaved {
+  visibility: visible;
+}
+
+.saved {
+  visibility: hidden;
+}
+
 @media all and (min-width: 490px) {
   iframe {
     width: 327px;

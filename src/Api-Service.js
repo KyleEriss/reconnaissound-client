@@ -1,25 +1,6 @@
 import config from './config';
 import TokenService from './token-service';
 
-// export const newUser = (username, password, addUser) => (
-//     fetch(`${config.API_ENDPOINT}/users`, {
-//         method: 'POST',
-//         headers: {
-//             'content-type': 'application/json'
-//         },
-//         body: JSON.stringify({
-//             username: username,
-//             password: password
-//         })
-//     })
-//         .then(res => res.json())
-//         .then(data => {
-//             console.log(data)
-//             addUser(data)
-//         })
-//         .catch(error => console.log(error))
-// );
-
 const AuthApiService = {
     postLogin({ username, password }) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {

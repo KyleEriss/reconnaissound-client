@@ -13,7 +13,7 @@ export default class Explore extends React.Component {
         maxResults: "",
         videos: [],
         loading: true,
-        error: null
+        error: null,
     };
 
     handleChange = event => {
@@ -43,7 +43,6 @@ export default class Explore extends React.Component {
                 this.setState({
                     videos: data.items, loading: false
                 })
-                console.log(youTubeUrl)
             })
             .catch(error => {
                 console.log({ error })
@@ -53,8 +52,6 @@ export default class Explore extends React.Component {
     addToPlayList = (event) => {
         const idNumber = event.currentTarget.dataset.id;
 
-        console.log(idNumber)
-
         let videoIdMapped = this.state.videos.map(video => {
             return video.id
         })
@@ -63,13 +60,17 @@ export default class Explore extends React.Component {
             return video.snippet.title
         })
 
-        console.log(videoIdMapped[idNumber]);
-        console.log(videoTitleMapped[idNumber]);
-
         const videoId = videoIdMapped[idNumber];
         const videoTitle = videoTitleMapped[idNumber];
 
         AuthApiService.postVideo(videoId, videoTitle);
+        
+        const newVideoList = this.state.videos.filter((item) => item.id !== videoId);
+
+        this.setState ({
+            videos: newVideoList
+        })
+        
     }
 
     render() {
@@ -115,7 +116,6 @@ export default class Explore extends React.Component {
                     {this.state.loading || !this.state.videos ? (
                         <div></div>
                     ) : (
-
                             <ul>
                                 {this.state.videos.map((video, idx) => (
                                     <li className="videoList" key={idx}>
@@ -133,7 +133,8 @@ export default class Explore extends React.Component {
                                                 {video.snippet.title}
                                             </a>
                                         </h3>
-                                        <button onClick={this.addToPlayList} data-id={idx}>Save to Playlist</button>
+                                        
+                                        <Button onClick={this.addToPlayList} data-id={idx}>Save to Playlist</Button>
                                     </li>
                                 ))}
                             </ul>
@@ -144,9 +145,6 @@ export default class Explore extends React.Component {
         );
     }
 }
-
-
-
 
 
 

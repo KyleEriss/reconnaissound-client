@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LandingForm from './LandingForm';
+import './LandingPage.css';
 
 export default class LandingPage extends Component {
 
@@ -7,23 +8,20 @@ export default class LandingPage extends Component {
 
     return (
 
-      <div>
-          Welcome to Reconnaissound!
-          <br />
-          <br />
-          Explore new and trending music videos in any country in the world.
-          <br />
-          <br />
-          To start, simply create an account, begin your search under the Explore tab, and save any of the content you like to your playlist.
-          <br />
-          <br />
-          Under the Playlist tab you can review and modify your list saved music videos.
-          <br />
-          <br />
-          Enjoy!
-          <br />
-          <br />
-          <LandingForm />
+      <div className="landingPageClass">
+        <div className="welcomeLanding">
+          Welcome to Reconnaissound
+        </div>
+        <div className="exploreLanding">
+          Explore new music videos from any country
+        </div>
+        <div className="playlistLanding">
+          Save music videos to your playlist
+        </div>
+        <div classname>
+
+        </div>
+        <LandingForm />
       </div>
 
     )

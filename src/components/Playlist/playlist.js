@@ -1,5 +1,6 @@
 import React from 'react';
 import AuthApiService from '../../Api-Service';
+import { Button } from '../Utils/Utils';
 import config from '../../config';
 import TokenService from '../../token-service';
 import './playlist.css';
@@ -31,12 +32,16 @@ export default class Playlist extends React.Component {
             })
     }
 
-    deleteFromPlayList = (event) => {
-        const videoId = event.currentTarget.dataset.id;
+    handleRemove = (id) => {
+        const videoId = id;
 
         AuthApiService.deleteVideo(videoId);
 
-        window.location.reload(false);
+        const newVideoList = this.state.videos.filter((item) => item.id !== videoId);
+
+        this.setState ({
+            videos: newVideoList
+        })
     }
 
 
@@ -65,7 +70,7 @@ export default class Playlist extends React.Component {
                                             {video.videotitle}
                                         </a>
                                     </h3>
-                                    <button onClick={this.deleteFromPlayList} data-id={video.id}>Delete from Playlist</button>
+                                    <Button onClick={() => this.handleRemove(video.id)}>Delete from Playlist</Button>
                                 </li>
                             ))}
                         </ul>

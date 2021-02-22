@@ -24,22 +24,21 @@ export default class Header extends React.Component {
     }
 
     render() {
-
         return (
 
             <div className="App-header">
-                <div className="item">
+                <div className="title" data-text="Reconnaissound">
                     <NavLinks.ReconHeaderLink />
                 </div>
 
                 <ul className="itemDouble">
-                    <li className="itemSingle">
+                    <li className="itemExplore">
                         <NavLinks.ExploreLink />
                     </li>
-                    <li className="itemSingle">
+                    <li className="itemPlaylist">
                         <NavLinks.PlaylistLink />
                     </li>
-                    <li className="itemSingle">
+                    <li className="itemLogin">
                         {TokenService.hasAuthToken()
                             ? <NavLinks.LogoutLink logout={this.handleLogoutClick} />
                             : <NavLinks.LoginLink />}
