@@ -18,9 +18,6 @@ export default class LandingPage extends Component {
         <div className="playlistLanding">
           Save music videos to your playlist
         </div>
-        <div classname>
-
-        </div>
         <LandingForm />
       </div>
 
