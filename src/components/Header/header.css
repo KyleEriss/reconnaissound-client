@@ -6,14 +6,14 @@
     min-height: 100vh;
     font-size: calc(10px + 2vmin);
     background: black;
-    /* animation: headerAnimation 5s forwards;
-    animation-delay: 4s; */
+    animation: headerAnimation 5s forwards;
+    animation-delay: 4s;
 }
 
-/* @keyframes headerAnimation {
+@keyframes headerAnimation {
     from {min-height: 100vh;}
     to {min-height: 5vh;}
-} */
+}
 
 
 .title {
@@ -32,7 +32,7 @@
 
 @keyframes titleAnimation {
     from {transform: translate(-50%, -50%);}
-    to {transform: translate(-50%, -450%);}
+    to {transform: translate(130%, 10%);}
 }
 .title:after {
     content: attr(data-text);
