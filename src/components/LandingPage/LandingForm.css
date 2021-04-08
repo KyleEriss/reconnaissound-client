@@ -5,7 +5,7 @@
 .loginLanding {
     opacity: 0;
     animation: loginLandingText 3s forwards;
-    animation-delay: 18s;
+    animation-delay: 12s;
 }
 
 @keyframes loginLandingText {

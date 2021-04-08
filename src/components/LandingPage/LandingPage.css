@@ -10,8 +10,8 @@
 
 .welcomeLanding {
     opacity: 0;
-    animation: welcomeAnimationText 4s;
-    animation-delay: 6s;
+    animation: welcomeAnimationText 3s;
+    animation-delay: 3s;
 }
 
 @keyframes welcomeAnimationText {
@@ -22,8 +22,8 @@
 
 .exploreLanding {
     opacity: 0;
-    animation: exploreAnimationText 4s;
-    animation-delay: 10s;
+    animation: exploreAnimationText 3s;
+    animation-delay: 6s;
 }
 
 @keyframes exploreAnimationText {
@@ -33,8 +33,8 @@
 
 .playlistLanding {
     opacity: 0;
-    animation: playlistAnimationText 4s;
-    animation-delay: 14s;
+    animation: playlistAnimationText 3s;
+    animation-delay: 9s;
 }
 
 @keyframes playlistAnimationText {

@@ -7,7 +7,7 @@
     font-size: calc(10px + 2vmin);
     background: black;
     animation: headerAnimation 5s forwards;
-    animation-delay: 4s;
+    animation-delay: 1s;
 }
 
 @keyframes headerAnimation {
@@ -20,20 +20,20 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -450%);
     padding: 0 20px;
     font-size: 3.2em;
     color: #fff;
     text-shadow: 0 0 20px rgb(255, 0, 149);
     font-family: 'Caveat', cursive;
-    animation: titleAnimation 4s forwards;
-    animation-delay: 3s;
+    /* animation: titleAnimation 4s forwards;
+    animation-delay: 3s; */
 }
 
-@keyframes titleAnimation {
+/* @keyframes titleAnimation {
     from {transform: translate(-50%, -50%);}
-    to {transform: translate(130%, 10%);}
-}
+    to {transform: translate(-50%, -450%);}
+} */
 .title:after {
     content: attr(data-text);
     position: absolute;
@@ -74,8 +74,8 @@
 .itemExplore {
     margin-right: 20px;
     opacity: 0;
-    animation: itemExploreAnimation 4s forwards;
-    animation-delay: 10s;
+    animation: itemExploreAnimation 3s forwards;
+    animation-delay: 6s;
 }
 
 .itemExplore:hover {
@@ -90,8 +90,8 @@
 .itemPlaylist {
     margin-right: 20px;
     opacity: 0;
-    animation: itemPlaylistAnimation 4s forwards;
-    animation-delay: 14s;
+    animation: itemPlaylistAnimation 3s forwards;
+    animation-delay: 9s;
 }
 
 .itemPlaylist:hover {
@@ -106,8 +106,8 @@
 .itemLogin {
     margin-right: 20px;
     opacity: 0;
-    animation: itemLoginAnimation 4s forwards;
-    animation-delay: 18s;
+    animation: itemLoginAnimation 3s forwards;
+    animation-delay: 12s;
 }
 
 .itemLogin:hover {
@@ -121,8 +121,7 @@
 
 @media all and (min-width: 700px) {
 
-    @keyframes titleAnimation {
-        from {transform: translate(-50%, -50%);}
-        to {transform: translate(-50%, -400%);}
+    .title {
+        transform: translate(-50%, -400%);
     }
 }
