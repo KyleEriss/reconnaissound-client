@@ -15,8 +15,14 @@
     to {min-height: 20vh;}
 } */
 
+.titleContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+}
+
 .title {
-    position: fixed;
+    position: absolute;
     transform: translate(45%, 600%);
     font-size: 10vw;
     color: #fff;
@@ -36,7 +42,7 @@
 
 .title:after {
     content: attr(data-text);
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     padding: 0 20px;
@@ -48,7 +54,7 @@
 
 .title:before {
     content: '';
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;

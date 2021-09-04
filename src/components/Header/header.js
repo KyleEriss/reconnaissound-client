@@ -53,8 +53,10 @@ export default class Header extends React.Component {
         return (
 
             <div className="App-header">
-                <div className="title" data-text="Reconnaissound">
-                    <NavLinks.ReconHeaderLink />
+                <div className="titleContainer">
+                    <div className="title" data-text="Reconnaissound">
+                        <NavLinks.ReconHeaderLink />
+                    </div>
                 </div>
 
                 <ul className="itemDouble">

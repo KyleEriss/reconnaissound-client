@@ -10,7 +10,7 @@ import PrivateRoute from './components/Utils/PrivateRoute';
 import PublicRoute from './components/Utils/PublicRoute';
 import './App.css';
 
-export default class App extends Component {
+export default class App extends React.Component {
 
   render() {
     return (
