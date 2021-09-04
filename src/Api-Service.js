@@ -67,7 +67,26 @@ const AuthApiService = {
                     ? res.json().then(e => Promise.reject(e))
                     : res.json()
             )
+    },
+
+    getVideos() {
+        fetch(`${config.API_ENDPOINT}/playlists`, {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+        .then(res =>
+            (!res.ok)
+                ? res.json().then(e => Promise.reject(e))
+                : res.json()
+        )
+        .catch(error => {
+            console.log({ error })
+        })
     }
+
 }
 
 export default AuthApiService

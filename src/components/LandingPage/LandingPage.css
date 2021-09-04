@@ -41,3 +41,14 @@
     from {opacity: 0;}
     to {opacity: 1;}
 }
+
+.landingPageExplore {
+    opacity: 0;
+    animation: exploreAnimationText 3s forwards;
+    animation-delay: 9s;
+}
+
+@keyframes exploreAnimationText {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

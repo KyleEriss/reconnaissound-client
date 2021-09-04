@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/header';
 import CreateAccountPage from './components/Create-Account/CreateAccountPage';
 import LoginPage from './components/Login/LoginPage';
@@ -21,11 +21,16 @@ export default class App extends Component {
         </div>
 
         <div className="mainComponents">
-          <Switch>
 
-            <PublicRoute
-              exact path="/" component={LandingPage}
-            />
+          <Route
+            path="/explore" component={Explore}
+          />
+
+          <Route
+            exact path="/" component={LandingPage}
+          />
+
+          <Switch>
 
             <PublicRoute
               exact path="/login" component={LoginPage}
@@ -33,10 +38,6 @@ export default class App extends Component {
 
             <PublicRoute
               exact path="/create-account" component={CreateAccountPage}
-            />
-
-            <PrivateRoute
-              path="/explore" component={Explore}
             />
 
             <PrivateRoute

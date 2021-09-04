@@ -1,0 +1,24 @@
+.username {
+    margin-top: 10px;
+}
+
+.password {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+::placeholder {
+    text-align: left;
+    font-weight: 100;
+}
+
+.errorMessage {
+    color: red;
+}
+
+.successMessage {
+    color: rgb(14, 190, 8);
+    font-weight: 900;
+    margin-bottom: 10px;
+    font-size: 19px;
+}

@@ -9,7 +9,10 @@ export default class LoginForm extends React.Component {
         onLoginSuccess: () => { }
     }
 
-    state = { error: null }
+    state = {
+        error: null,
+        loggedIn: false
+    }
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
@@ -24,7 +27,10 @@ export default class LoginForm extends React.Component {
                 username.value = ''
                 password.value = ''
                 TokenService.saveAuthToken(res.authToken)
-                this.props.onLoginSuccess()
+                this.setState({ loggedIn: true })
+                setTimeout(() => {
+                    this.props.onLoginSuccess()
+                }, 2000);
             })
             .catch(res => {
                 this.setState({ error: res.error })
@@ -41,10 +47,17 @@ export default class LoginForm extends React.Component {
                 <div role='alert'>
                     {error && <p className='red'>{error}</p>}
                 </div>
+                <div>
+                    {this.state.loggedIn ? (
+                        <div className='successMessage'>Success! Redirecting...</div>
+                    ) : (
+                        <div></div>
+                    )}
+                </div>
                 <div className='username'>
                     <label htmlFor='LoginForm__username'>
                         User name
-              </label>
+                    </label>
                     <Input
                         name='username'
                         required
@@ -54,7 +67,7 @@ export default class LoginForm extends React.Component {
                 <div className='password'>
                     <label htmlFor='LoginForm__password'>
                         Password
-              </label>
+                    </label>
                     <Input
                         name='password'
                         type='password'

@@ -1,3 +1,15 @@
+.allVideos {
+  margin: auto;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 500px;
+  width: 80%;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: gray;
+  border-width: 3px;
+}
+
 .inputField {
   width: 50%;
 }
@@ -6,20 +18,20 @@
   font-size: medium;
 }
 
-  @media all and (min-width: 490px) {
-    iframe {
-        width: 327px;
-        height: 184px;
-    }
-  
-    .inputField {
-      width: 80%;
+  @media all and (min-width: 550px) {
+    .allVideos {
+      width: 60%;
     }
   }
   
-  @media all and (min-width: 1000px) {
-    iframe {
-        width: 560px;
-        height: 315px;
+  @media all and (min-width: 800px) {
+    .allVideos {
+      width: 40%;
+    }
+  }
+
+  @media all and (min-width: 1200px) {
+    .allVideos {
+      width: 30%;
     }
   }

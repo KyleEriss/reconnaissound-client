@@ -9,7 +9,7 @@ export default class Playlist extends React.Component {
 
     state = {
         videos: [],
-        loading: true
+        loading: true,
     }
 
     componentDidMount() {
@@ -39,7 +39,7 @@ export default class Playlist extends React.Component {
 
         const newVideoList = this.state.videos.filter((item) => item.id !== videoId);
 
-        this.setState ({
+        this.setState({
             videos: newVideoList
         })
     }
@@ -48,33 +48,34 @@ export default class Playlist extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="allVideos">
 
                 {this.state.loading || !this.state.videos ? (
                     <div></div>
                 ) : (
 
-                        <ul>
-                            {this.state.videos.map((video) => (
-                                <li className="videoList" key={video.id}>
-                                    <iframe
-                                        width="210"
-                                        height="118"
-                                        src={`https://www.youtube.com/embed/${video.videoid}`}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        frameborder="0"
-                                        allowFullScreen>
-                                    </iframe>
-                                    <h3 className="videoTitle">
-                                        <a href={`https://www.youtube.com/watch?v=${video.videoid}`}>
-                                            {video.videotitle}
-                                        </a>
-                                    </h3>
-                                    <Button onClick={() => this.handleRemove(video.id)}>Delete from Playlist</Button>
-                                </li>
-                            ))}
-                        </ul>
-                    )}
+                    <ul>
+                        {this.state.videos.map((video, idx) => (
+                            <li className="videoList" key={video.id}>
+                                <iframe
+                                    title="playlist"
+                                    width="210"
+                                    height="118"
+                                    src={`https://www.youtube.com/embed/${video.videoid}`}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    frameborder="0"
+                                    allowFullScreen>
+                                </iframe>
+                                <h3 className="videoTitle">
+                                    <a href={`https://www.youtube.com/watch?v=${video.videoid}`}>
+                                        {video.videotitle}
+                                    </a>
+                                </h3>
+                                <Button onClick={() => this.handleRemove(video.id)}>Delete from Playlist</Button>
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </div>
 
 

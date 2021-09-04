@@ -10,13 +10,13 @@ export default class CreateAccountPage extends Component {
 
   handleRegistrationSuccess = user => {
     const { history } = this.props
-    history.push('/login')
+    history.push('/explore')
   }
 
   render() {
     return (
       <div>
-        <h2>Create Account</h2>
+        <h2 className='createAccountText'>Create Account</h2>
         <CreateAccountForm
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />

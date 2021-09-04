@@ -2,6 +2,7 @@ import React from 'react';
 import NavLinks from './NavLinks';
 import './header.css';
 import TokenService from '../../token-service';
+import config from '../../config';
 
 export default class Header extends React.Component {
 
@@ -12,15 +13,40 @@ export default class Header extends React.Component {
         }
     }
 
+    state = {
+        savedItems: null
+    }
+
     handleLogoutClick = () => {
-        TokenService.clearAuthToken()
+        TokenService.clearAuthToken();
         window.location.reload(false);
     }
 
-    componentDidMount() {
-        this.setState({
-            loggedIn: TokenService.hasAuthToken()
-        })
+    async componentDidMount() {
+        setInterval(() => {
+            this.setState({
+                loggedIn: TokenService.hasAuthToken()
+            })
+            if (this.state.loggedIn) {
+                fetch(`${config.API_ENDPOINT}/playlists`, {
+                    method: 'GET',
+                    headers: {
+                        'content-type': 'application/json',
+                        'authorization': `bearer ${TokenService.getAuthToken()}`,
+                    }
+                })
+                    .then(res => res.json())
+                    .then((data) => {
+                        this.setState({
+                            savedItems: data.length
+                        })
+                        console.log(this.state.savedItems)
+                    })
+                    .catch(error => {
+                        console.log({ error })
+                    })
+            }
+        }, 1000);
     }
 
     render() {
@@ -35,9 +61,19 @@ export default class Header extends React.Component {
                     <li className="itemExplore">
                         <NavLinks.ExploreLink />
                     </li>
+
                     <li className="itemPlaylist">
                         <NavLinks.PlaylistLink />
+                        {this.state.savedItems ? (
+                            <div className='numberOfItems'>
+                                {this.state.savedItems}
+                            </div>
+
+                        ) : (
+                            <div></div>
+                        )}
                     </li>
+
                     <li className="itemLogin">
                         {TokenService.hasAuthToken()
                             ? <NavLinks.LogoutLink logout={this.handleLogoutClick} />

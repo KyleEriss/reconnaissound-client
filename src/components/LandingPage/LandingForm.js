@@ -27,7 +27,6 @@ export default class LandingForm extends React.Component {
                         <br />password: Password1!
                     </div>
                 </div>
-
         )
     }
 }
