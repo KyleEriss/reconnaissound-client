@@ -45,7 +45,7 @@
 .landingPageExplore {
     opacity: 0;
     animation: exploreAnimationText 3s forwards;
-    animation-delay: 9s;
+    animation-delay: 12s;
 }
 
 @keyframes exploreAnimationText {

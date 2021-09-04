@@ -46,7 +46,7 @@ export default class Header extends React.Component {
                         console.log({ error })
                     })
             }
-        }, 1000);
+        }, 15000);
     }
 
     render() {

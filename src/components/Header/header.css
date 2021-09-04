@@ -22,9 +22,12 @@
     color: #fff;
     text-shadow: 0 0 20px rgb(255, 0, 149);
     font-family: 'Caveat', cursive;
-    animation: titleAnimation 4s forwards;
+    /* animation: titleAnimation 4s forwards;
     animation-timing-function: ease-out;
-    animation-delay: 2s;
+    animation-delay: 2s; */
+    animation: titleAnimation 8s forwards;
+    animation-timing-function: ease-in;
+    animation-delay: 4s;
 }
 
 @keyframes titleAnimation {
