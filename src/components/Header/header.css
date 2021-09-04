@@ -6,14 +6,14 @@
     min-height: 100vh;
     font-size: calc(10px + 2vmin);
     background: black;
-    animation: headerAnimation 5s forwards;
-    animation-delay: 2s;
+    /* animation: headerAnimation 5s forwards;
+    animation-delay: 2s; */
 }
 
-@keyframes headerAnimation {
+/* @keyframes headerAnimation {
     from {min-height: 100vh;}
     to {min-height: 20vh;}
-}
+} */
 
 .title {
     position: absolute;
@@ -26,7 +26,6 @@
     animation-timing-function: ease-out;
     animation-delay: 2s; */
     animation: titleAnimation 8s forwards;
-    animation-timing-function: ease-in;
     animation-delay: 4s;
 }
 
@@ -74,52 +73,51 @@
 
 .itemExplore {
     opacity: 0;
-    animation: itemExploreAnimation 3s forwards;
-    animation-delay: 6s;
+    /* animation: itemExploreAnimation 3s forwards;
+    animation-delay: 6s; */
 }
 
 .itemExplore:hover {
     text-decoration: underline;
 }
 
-@keyframes itemExploreAnimation {
+/* @keyframes itemExploreAnimation {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+} */
 
 .itemPlaylist {
     display: flex;
     flex-direction: row;
     padding-right: 10px;
     opacity: 0;
-    animation: itemPlaylistAnimation 3s forwards;
-    animation-delay: 9s;
+    /* animation: itemPlaylistAnimation 3s forwards;
+    animation-delay: 9s; */
 }
 
 .itemPlaylist:hover {
     text-decoration: underline;
 }
 
-@keyframes itemPlaylistAnimation {
+/* @keyframes itemPlaylistAnimation {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+} */
 
 .itemLogin {
-    /* margin-right: 20px; */
     opacity: 0;
-    animation: itemLoginAnimation 3s forwards;
-    animation-delay: 12s;
+    /* animation: itemLoginAnimation 3s forwards;
+    animation-delay: 12s; */
 }
 
 .itemLogin:hover {
     text-decoration: underline;
 }
 
-@keyframes itemLoginAnimation {
+/* @keyframes itemLoginAnimation {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+} */
 
 
 
