@@ -36,7 +36,7 @@
 
 .title:after {
     content: attr(data-text);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     padding: 0 20px;
@@ -48,7 +48,7 @@
 
 .title:before {
     content: '';
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
