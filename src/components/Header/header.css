@@ -16,7 +16,7 @@
 } */
 
 .title {
-    position: absolute;
+    position: fixed;
     transform: translate(45%, 600%);
     font-size: 10vw;
     color: #fff;
