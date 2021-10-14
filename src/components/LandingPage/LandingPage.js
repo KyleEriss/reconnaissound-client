@@ -4,6 +4,24 @@ import './LandingPage.css';
 
 export default class LandingPage extends Component {
 
+  static defaultProps = {
+    history: {
+      push: () => { },
+    },
+  }
+
+  handleRegistrationSuccess = user => {
+    const { history } = this.props
+    history.push('/explore')
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      const { history } = this.props
+      history.push('/explore')
+    }, 12000)
+  }
+
   render() {
 
     return (
@@ -18,9 +36,6 @@ export default class LandingPage extends Component {
           <div className="playlistLanding">
             Save music videos to your playlist
           </div>
-        </div>
-        <div className="landingPageExplore">
-          <Explore />
         </div>
       </div>
 
